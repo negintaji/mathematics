@@ -1,7 +1,18 @@
 # https://github.com/negintaji/mathematics.git
 
+
 from statistics import mean
 
-numbers = list(map(float, input().split()))
+while True:
+    try:
+        numbers = list(map(float, input().split()))
 
-print(f"{mean(numbers):.2f}")
+        if not numbers:
+            raise ValueError
+
+        print(f"{mean(numbers):.2f}")
+        break
+
+    except ValueError:
+        print("Invalid Input! Enter a valid input.")
+
